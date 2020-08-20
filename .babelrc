@@ -1,0 +1,38 @@
+// Babel 是广为使用的 ES6 转码器，可以将 ES6 代码转化为 ES5 代码。使用 Babel 第一步就是配置此文件，放在项目根目录，此文件用于配置转码规则和插件
+// 插件（plugins）是某一类 plugin 的集合，包含了某一类插件的所有功能。
+// 预设（presets）将某一种需要转化的代码，转为浏览器可以执行代码。
+// 参考资料：https://zhuanlan.zhihu.com/p/95849140
+{
+    "plugins": [],
+    "presets": [
+        "env"
+    ]
+}
+// 一：主要plugins介绍
+// babel-preset-es2015 ( ES2015 / ES6 插件集合 )
+// 将 ES2015(es6) 的 javascript 代码 转化 浏览器兼容 javascript 代码
+// babel-preset-es2016 （ ES2016 / ES7 插件集合 ）
+// 将 ES2016(es7) 的 javascript 代码 转为 浏览器兼容代码
+// babel-preset-es2017（ ES2017 / es8 插件集合 ）
+// 将 ES2017(es8) 的代码进行转化　
+// babel-preset-stage-x （ ES2018/stage 插件集合 ）
+// 将 stage 阶段的代码转化
+// Modules
+// 将不同的 export default x 转为不同的模块形式 amd / commonjs / systemjs / umd
+// 二：主要 presets 介绍
+// @babel/preset-dev
+// 是一个智能预设，根据浏览器和运行环境，自动的确定 babel 插件和 polyfills
+// target: 描述您为项目配置的 支持/定位 的环境
+// browsers ：浏览器的支持情况，将返回支持浏览器列表。 会被 target.ie 覆盖
+//      [ 'ie>=8' ] 支持 ie8 的环境
+//      "default" 默认
+// node ：指定是 node 环境，且可以指定版本
+// safari: safari 版本
+// modules: 启用将 es6 转为其他模块
+// debug ： 是否启用 console.log　
+// include / exclude: 必须启用的 plugin 功能 / 不启用的 plugin 功能
+// uglify: 是否压缩代码
+// useBuiltIns：
+//      true： 引用部分，根据配置的 preset-env 环境，引用 polyfill，在入口文件中要引用 babel-polyfill
+//      false：引用所有的 babel-polyfill，在 webpack 中添加 babel-polyfill 入口处：entry: [ 'babel-polyfill' , 'index.js'
+// ], 引用所有的 polyfill，体积变大
